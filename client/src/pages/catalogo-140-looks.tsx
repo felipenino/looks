@@ -380,7 +380,10 @@ function OfertaFinal() {
         <div className="font-black text-black mt-2 tracking-tighter text-[42px]">5x de R$ 8,19</div>
         <p className="text-black/30 text-[10px] mt-4 font-black uppercase tracking-widest">(mais barato que uma blusinha)</p>
         
-        <Button className="mt-10 w-full h-16 rounded-xl bg-[#39C55E] hover:bg-[#2EB051] text-white font-black shadow-2xl transition-transform hover:scale-[1.02] uppercase tracking-tight text-[18px]">
+        <Button 
+          className="mt-10 w-full h-16 rounded-xl bg-[#39C55E] hover:bg-[#2EB051] text-white font-black shadow-2xl transition-transform hover:scale-[1.02] uppercase tracking-tight text-[18px]"
+          onClick={() => window.open("https://go.hotmart.com/C99586077J", "_blank")}
+        >
           Acesso imediato e vitalício
         </Button>
 
@@ -595,7 +598,7 @@ function StickyMiniNav() {
           </div>
           <span className="text-sm font-black tracking-tighter uppercase">140 Looks</span>
         </div>
-        <Button size="sm" className="rounded-full bg-[#C2452D] text-white px-6 font-bold text-xs" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Quero Agora</Button>
+        <Button size="sm" className="rounded-full bg-[#C2452D] text-white px-6 font-bold text-xs" onClick={() => window.open("https://go.hotmart.com/C99586077J", "_blank")}>Quero Agora</Button>
       </div>
     </motion.div>
   );
