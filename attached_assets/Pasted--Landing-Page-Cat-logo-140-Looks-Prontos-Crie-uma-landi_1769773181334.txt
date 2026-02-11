@@ -1,0 +1,730 @@
+# Landing Page — Catálogo 140 Looks Prontos
+
+Crie uma landing page premium para o **Catálogo 140 Looks**, um catálogo digital de looks prontos para copiar.
+O design deve ser **feminino, sofisticado e acolhedor** — transmitindo praticidade e elegância.
+
+**Idioma:** Português brasileiro (PT-BR)
+**Mobile-first:** A página deve ser otimizada para mobile, já que a maioria do tráfego vem de redes sociais.
+
+---
+
+## DESIGN SYSTEM (design.json)
+
+```json
+{
+  "designSystem": {
+    "name": "Catálogo 140 Looks Design System",
+    "version": "1.0",
+    "description": "Design feminino, sofisticado e clean com toques de cor magenta/rosa para CTAs e destaques"
+  },
+
+  "designPrinciples": [
+    {
+      "name": "Sofisticação Acessível",
+      "description": "Visual elegante mas acolhedor, nunca intimidante. A mulher deve se sentir capaz de alcançar esse estilo."
+    },
+    {
+      "name": "Leveza e Movimento",
+      "description": "Elementos flutuantes, espaços generosos e animações suaves que transmitem praticidade."
+    },
+    {
+      "name": "Confiança Feminina",
+      "description": "Cores e tipografia que empoderam sem serem agressivas. Tom de conversa entre amigas."
+    }
+  ],
+
+  "colors": {
+    "primary": {
+      "main": "#C41E7A",
+      "light": "#E91E9C",
+      "dark": "#9A1860",
+      "description": "Magenta/rosa — usado em CTAs, destaques e badges. Representa feminilidade e energia."
+    },
+    "accent": {
+      "main": "#C41E7A",
+      "hover": "#E91E9C",
+      "description": "Mesmo tom do primary — para botões e elementos de destaque."
+    },
+    "background": {
+      "white": "#FFFFFF",
+      "cream": "#FAF8F5",
+      "lightGray": "#F5F5F5",
+      "dark": "#1A1A1A",
+      "description": "Alternar entre branco e cream/cinza claro entre seções. Seções de oferta e CTA podem usar dark."
+    },
+    "text": {
+      "primary": "#1A1A1A",
+      "secondary": "#4A4A4A",
+      "muted": "#7A7A7A",
+      "onDark": "#FFFFFF",
+      "description": "Texto escuro para legibilidade. Branco sobre fundos escuros."
+    },
+    "ui": {
+      "border": "#E5E5E5",
+      "shadow": "rgba(0,0,0,0.08)",
+      "success": "#22C55E",
+      "warning": "#F59E0B"
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "heading": "'Playfair Display', Georgia, serif",
+      "body": "'Inter', system-ui, sans-serif"
+    },
+    "headings": {
+      "h1": {
+        "size": "clamp(2.5rem, 6vw, 4rem)",
+        "weight": "700",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em"
+      },
+      "h2": {
+        "size": "clamp(1.75rem, 4vw, 2.5rem)",
+        "weight": "600",
+        "lineHeight": "1.2"
+      },
+      "h3": {
+        "size": "1.25rem",
+        "weight": "600",
+        "lineHeight": "1.4"
+      }
+    },
+    "body": {
+      "large": { "size": "1.125rem", "lineHeight": "1.7" },
+      "base": { "size": "1rem", "lineHeight": "1.6" },
+      "small": { "size": "0.875rem", "lineHeight": "1.5" }
+    }
+  },
+
+  "spacing": {
+    "section": {
+      "paddingY": "clamp(3rem, 8vw, 6rem)",
+      "paddingX": "clamp(1rem, 5vw, 2rem)"
+    },
+    "container": { "maxWidth": "1100px" },
+    "grid": { "gap": "2rem", "cardGap": "1.5rem" }
+  },
+
+  "components": {
+    "buttons": {
+      "primary": {
+        "background": "#C41E7A",
+        "text": "#FFFFFF",
+        "borderRadius": "9999px",
+        "paddingX": "2rem",
+        "paddingY": "1rem",
+        "fontWeight": "600",
+        "fontSize": "1rem",
+        "hoverBackground": "#E91E9C",
+        "hoverTransform": "translateY(-2px)",
+        "boxShadow": "0 4px 14px rgba(196, 30, 122, 0.3)",
+        "transition": "all 0.2s ease"
+      },
+      "secondary": {
+        "background": "transparent",
+        "text": "#C41E7A",
+        "border": "2px solid #C41E7A",
+        "borderRadius": "9999px"
+      }
+    },
+    "cards": {
+      "default": {
+        "background": "#FFFFFF",
+        "borderRadius": "1rem",
+        "padding": "1.5rem",
+        "boxShadow": "0 4px 20px rgba(0,0,0,0.06)",
+        "border": "1px solid #E5E5E5",
+        "hoverTransform": "translateY(-4px)",
+        "transition": "all 0.3s ease"
+      },
+      "dark": {
+        "background": "#1A1A1A",
+        "borderRadius": "1rem",
+        "padding": "1.5rem",
+        "text": "#FFFFFF"
+      }
+    },
+    "badges": {
+      "style": {
+        "background": "rgba(196, 30, 122, 0.1)",
+        "text": "#C41E7A",
+        "borderRadius": "9999px",
+        "padding": "0.375rem 1rem",
+        "fontSize": "0.75rem",
+        "fontWeight": "600",
+        "textTransform": "uppercase"
+      }
+    }
+  },
+
+  "effects": {
+    "shadows": {
+      "sm": "0 1px 3px rgba(0,0,0,0.08)",
+      "md": "0 4px 12px rgba(0,0,0,0.08)",
+      "lg": "0 10px 40px rgba(0,0,0,0.12)"
+    },
+    "transitions": {
+      "default": "all 0.2s ease",
+      "smooth": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "floating": {
+      "animation": "float 4s ease-in-out infinite",
+      "keyframes": "0%, 100% { transform: translateY(0px) } 50% { transform: translateY(-15px) }"
+    }
+  },
+
+  "responsive": {
+    "breakpoints": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px"
+    },
+    "mobileAdaptations": [
+      "Single column layouts",
+      "Full-width buttons",
+      "Reduced heading sizes",
+      "Floating images smaller and repositioned"
+    ]
+  }
+}
+```
+
+---
+
+## ASSETS DO USUÁRIO
+
+Os seguintes assets serão fornecidos pelo usuário e devem ser usados nas seções indicadas:
+
+| Asset | Arquivo | Uso |
+|-------|---------|-----|
+| Capa do Catálogo | `capa-catalogo.png` | Seção Entregáveis |
+| GIF do App | `app.gif` | Seção Entregáveis (Bônus 1) |
+| Capa Acessórios | `capa-ebook-acessorios.png` | Seção Entregáveis (Bônus 2) |
+| Foto Suelen | `suelen-lungov-rodape.png` | Seção Sobre Mim |
+| Bolsa flutuante | `bolsa_flutuante.png` | Hero (floating) |
+| Calça flutuante | `calca_flutuante.png` | Hero (floating) |
+| Camisa flutuante | `camisa-flutuante.png` | Hero (floating) |
+| Cinto flutuante | `cinto_flutuante.png` | Hero (floating) |
+| Colete flutuante | `colete-flutuante.png` | Hero (floating) |
+| Tênis flutuante | `tenis_flutuante.png` | Hero (floating) |
+| Fotos depoimentos | Prints de WhatsApp | Seção Depoimentos (extrair fotos dos perfis) |
+
+---
+
+## SEÇÕES DA LANDING PAGE
+
+---
+
+### SEÇÃO 1: HERO
+
+**Layout:** Centralizado com imagens flutuantes ao redor
+**Background:** #FFFFFF (branco)
+
+#### Estrutura
+
+**Texto superior (badge):**
+> catálogo com
+
+**Headline (h1):**
+> **140 LOOKS PRONTOS**
+
+- Fonte: Playfair Display, 700
+- "140 LOOKS" em destaque (maior, pode ser cor primary #C41E7A)
+- "PRONTOS" abaixo, mesmo tamanho
+
+**Subtítulo:**
+> para copiar e se vestir bem todos os dias — sem comprar roupa nova, sem perder tempo e com apenas **14 peças**.
+
+- Fonte: Inter, 400
+- Destacar "14 peças" em bold ou cor primary
+- Max-width: 400px, centralizado
+
+**[VÍDEO EMBEDADO]**
+- Container com aspect-ratio 16:9
+- Bordas arredondadas (1rem)
+- Sombra suave
+- Placeholder para embed de vídeo (YouTube/Vimeo)
+- Largura máxima: 500px no mobile
+
+**Imagens Flutuantes:**
+Posicionar as 6 imagens de roupas ao redor do conteúdo central:
+- `camisa-flutuante.png` — topo esquerdo
+- `colete-flutuante.png` — topo direito  
+- `bolsa_flutuante.png` — meio esquerdo
+- `calca_flutuante.png` — meio direito
+- `cinto_flutuante.png` — baixo esquerdo
+- `tenis_flutuante.png` — baixo direito
+
+**Comportamento das imagens flutuantes:**
+- Cada imagem tem animação de float independente (delays diferentes)
+- No mobile: imagens menores e mais próximas do centro
+- Parallax suave no scroll (opcional)
+- Z-index menor que o conteúdo central
+
+#### Animações
+- Headline: Fade-in-up ao carregar
+- Subtítulo: Fade-in com delay de 0.2s
+- Vídeo: Fade-in com delay de 0.4s
+- Imagens flutuantes: Cada uma com animação `float` com duration e delay diferentes (3-5s, staggered)
+
+---
+
+### SEÇÃO 2: CHECKLIST DE DORES
+
+**Layout:** Lista centralizada
+**Background:** #FAF8F5 (cream)
+
+#### Header
+> **Teste para você saber se o catálogo foi feito para você ou não:**
+
+#### Checklist Items
+Cada item com emoji + texto. Estilo de checkbox/lista:
+
+> 💸 Gasta dinheiro em roupas que ficam **encostadas no armário**?
+
+> 👻 Se sente **invisível** usando sempre as mesmas combinações?
+
+> 😔 Sua **autoestima cai** quando se olha no espelho antes de sair?
+
+> ⏰ Já ficou **horas para escolher** uma roupa e no final não gostou?
+
+> 🛒 Compra por impulso achando que o problema é **falta de roupa**?
+
+**Conclusão:**
+> *Se você marcou pelo menos 2, o Catálogo 140 Looks foi feito pra você.*
+
+#### Estilo
+- Cada item em card ou linha com padding
+- Palavras em **bold** destacadas
+- Emojis coloridos
+- Texto de conclusão em itálico, cor primary
+
+#### Animações
+- Itens aparecem com stagger (0.1s delay cada) no scroll
+
+---
+
+### SEÇÃO 3: TRANSIÇÃO / GANCHO
+
+**Layout:** Texto centralizado, full-width
+**Background:** #1A1A1A (dark)
+**Texto:** #FFFFFF
+
+#### Copy
+
+> **O problema não é seu armário.**
+> **É não saber como usar o que você já tem.**
+
+> Você não precisa de mais roupas. Precisa de **combinações prontas** que funcionam.
+
+#### Estilo
+- Primeira frase: h2, Playfair Display
+- Segunda frase: Body large, Inter
+- "combinações prontas" em destaque (cor primary ou bold)
+- Padding generoso (py: 4rem+)
+
+#### Animações
+- Fade-in no scroll
+- Texto pode ter efeito de reveal palavra por palavra (opcional)
+
+---
+
+### SEÇÃO 4: ENTREGÁVEIS
+
+**Layout:** Cards empilhados verticalmente (mobile-first)
+**Background:** #FFFFFF
+
+#### Header
+> **TUDO O QUE VOCÊ VAI RECEBER:**
+
+#### Card 1: Catálogo Principal
+- **Imagem:** `capa-catalogo.png` (mockup 3D do ebook)
+- **Título:** Catálogo de 140 Looks
+- **Descrição:** Looks prontos para copiar. É só escolher o número e se vestir. Acessa direto no WhatsApp, sem complicação.
+
+#### Card 2: Bônus 1 — App
+- **Badge:** "Bônus 1" (pill rosa)
+- **Imagem:** `app.gif` (GIF do app funcionando no celular)
+- **Título:** Aplicativo 140 Looks
+- **Descrição:** Praticidade no dia a dia. Você também recebe acesso a um aplicativo com todos os looks do guia. Super simples de usar.
+
+#### Card 3: Bônus 2 — Acessórios
+- **Badge:** "Bônus 2" (pill rosa)
+- **Imagem:** `capa-ebook-acessorios.png` (mockup 3D)
+- **Título:** Catálogo de Acessórios
+- **Descrição:** Combinações de acessórios para dar aquele "up" no seu look. Às vezes, o que falta é um detalhe. Acessórios que elevam seu visual.
+
+#### Estilo dos Cards
+- Layout: Imagem à esquerda (40%), texto à direita (60%) — ou stacked no mobile
+- Background: #1A1A1A (cards escuros como na referência)
+- Texto: #FFFFFF
+- Border-radius: 1rem
+- Badges de bônus: Background rosa, texto branco, posição absoluta sobre a imagem
+
+#### Animações
+- Cards: Fade-in-up com stagger no scroll
+- GIF do app já é animado naturalmente
+
+---
+
+### SEÇÃO 5: COMPARATIVO (Por que o Catálogo?)
+
+**Layout:** Tabela ou cards lado a lado
+**Background:** #FAF8F5 (cream)
+
+#### Header
+> **Por que o Catálogo 140 Looks?**
+
+#### Tabela Comparativa
+
+| Alternativa | Problema | Catálogo 140 Looks |
+|-------------|----------|-------------------|
+| Personal Stylist | R$ 200-500 por consulta | ✅ Acesso vitalício por menos de R$60 |
+| Cursos de Estilo | R$ 200-2000, leva semanas | ✅ Pronto para usar hoje |
+| Apps de Armário | Você monta tudo sozinha | ✅ 140 combinações já feitas |
+| Pinterest/Instagram | Inspiração sem direção | ✅ Looks possíveis com peças básicas |
+| Comprar mais roupa | Gasta e não resolve | ✅ Usa o que já tem no armário |
+
+#### Estilo
+- Coluna "Alternativa" e "Problema": Texto neutro/cinza
+- Coluna "Catálogo": Fundo suave rosa, checkmarks verdes
+- Mobile: Transformar em cards empilhados ao invés de tabela
+
+#### Animações
+- Linhas aparecem com stagger
+- Checkmarks: Pop-in com scale
+
+---
+
+### SEÇÃO 6: COMO FUNCIONA
+
+**Layout:** 3 steps horizontais (desktop) / verticais (mobile)
+**Background:** #FFFFFF
+
+#### Header
+> **Como funciona?**
+
+#### Steps
+
+**Step 1:**
+- Número: "1" em círculo rosa
+- Título: Acesse o catálogo
+- Descrição: Você recebe o PDF + acesso ao app direto no seu WhatsApp, em poucos minutos.
+- Ícone: Download ou WhatsApp
+
+**Step 2:**
+- Número: "2" em círculo rosa
+- Título: Escolha um look
+- Descrição: São 140 opções. Escolha pelo número ou pela ocasião.
+- Ícone: Search ou Grid
+
+**Step 3:**
+- Número: "3" em círculo rosa
+- Título: Se vista e saia
+- Descrição: Sem dúvida, sem perda de tempo. Confiante em minutos.
+- Ícone: Sparkles ou Check
+
+#### Estilo
+- Linha conectando os steps (dashed ou sólida)
+- Números em círculos com background primary
+- Ícones do Lucide React
+
+#### Animações
+- Steps: Stagger reveal no scroll
+- Linha: Draw animation (opcional)
+
+---
+
+### SEÇÃO 7: OFERTA
+
+**Layout:** Centralizado, destaque visual
+**Background:** #1A1A1A (dark) ou gradient rosa/magenta
+
+#### Header Badge
+> **CONDIÇÃO ESPECIAL HOJE**
+
+#### Preço
+- Preço original riscado: ~~de R$ 89,00~~
+- Preço atual destacado: **por apenas R$ 57,00**
+- Parcelamento: **ou 5x de R$ 8,19**
+- Comparação: *(mais barato que uma blusinha)*
+
+#### CTA Button
+> **Quero Acesso Imediato**
+
+- Estilo: Grande, pill, background branco com texto rosa (invertido para contraste)
+- Ou: Background rosa vibrante com texto branco
+- Seta ou ícone opcional
+
+#### Trust Badges (abaixo do botão)
+> ✅ Acesso vitalício • ✅ Entrega imediata • ✅ Garantia de 7 dias
+
+#### Estilo
+- Preço original: Texto cinza, riscado
+- Preço atual: Grande (2rem+), bold, branco ou rosa
+- Parcelamento: Tamanho médio
+- Comparação: Itálico, tom mais leve
+
+#### Animações
+- Seção: Fade-in no scroll
+- Preço: Pode ter efeito de "pulse" suave
+- Botão: Hover lift + glow
+
+---
+
+### SEÇÃO 8: DEPOIMENTOS
+
+**Layout:** Cards em grid ou carousel
+**Background:** #FFFFFF
+
+#### Header
+> **O que nossas clientes dizem:**
+
+#### Testimonial Cards
+
+**Card 1: Luiza Fontes**
+- Foto: Extrair do print de WhatsApp
+- Nome: Luiza Fontes
+- Descrição: Empresária
+- Quote: "Descobri que já tinha quase tudo no armário. Me destravou mentalmente! É muito prático, você clica e já abre tudo rapidinho."
+
+**Card 2: Monique C.**
+- Foto: Extrair do print
+- Nome: Monique C.
+- Descrição: Analista de Marketing
+- Quote: "Os looks são lindos e super versáteis, com peças que toda mulher já tem. Mandei até pra minha mãe e minhas tias!"
+
+**Card 3: Marcela**
+- Foto: Extrair do print
+- Nome: Marcela
+- Descrição: Advogada, mãe de 2
+- Quote: "Conteúdo direto e objetivo. Combinações fáceis, do casual ao chique, pro dia ou pra noite. Muito bem pensado!"
+
+**Card 4: Rebeca**
+- Foto: Extrair do print
+- Nome: Rebeca
+- Descrição: Gerente Comercial — SP
+- Quote: "Super prático e direto ao ponto. As sugestões são fáceis de aplicar e otimizam o que a gente já tem. Vale muito a pena!"
+
+**Card 5: Fávia Benuzzi**
+- Foto: Extrair do print
+- Nome: Fávia Benuzzi
+- Descrição: Consultora — SP
+- Quote: "Estou apaixonada! Nunca imaginei que dava pra criar tantos looks incríveis com peças básicas. Me sinto muito mais confiante!"
+
+#### Estilo dos Cards
+- Background: Branco
+- Border-radius: 1rem
+- Padding: 1.5rem
+- Sombra suave
+- Foto: Círculo (64px), borda sutil
+- Nome: Bold
+- Descrição: Texto muted, menor
+- Quote: Entre aspas, itálico ou fonte diferenciada
+- Ícone de aspas (") no canto superior, cor primary com 20% opacity
+
+#### Layout
+- Desktop: Grid de 3 colunas, cards 1-3 na primeira linha, 4-5 na segunda (centralizados)
+- Mobile: Carousel horizontal com scroll snap
+
+#### Animações
+- Cards: Stagger fade-in
+- Hover: Lift + shadow increase
+
+---
+
+### SEÇÃO 9: GARANTIA
+
+**Layout:** Centralizado com selo visual
+**Background:** #FAF8F5 (cream)
+
+#### Visual
+- Selo/badge grande com "07" em destaque
+- Texto "DIAS DE GARANTIA" abaixo do número
+
+#### Copy
+> **A GARANTIA DE 7 DIAS OU SEU DINHEIRO DE VOLTA!**
+
+> Eu quero mesmo é que você teste, veja tudo e tire suas próprias conclusões. Se não gostar, devolvemos seu dinheiro.
+
+#### Estilo
+- Selo: Círculo ou shield com número grande
+- Background do selo: Primary ou dourado
+- Texto da garantia: Bold, caps
+- Explicação: Texto regular, tom acolhedor
+
+#### Animações
+- Selo: Scale-in no scroll
+- Texto: Fade-in com delay
+
+---
+
+### SEÇÃO 10: SOBRE MIM
+
+**Layout:** 2 colunas (foto + texto) ou centralizado
+**Background:** Linear gradient de magenta (#C41E7A) para escuro, como na foto da Suelen
+
+#### Foto
+- Usar `suelen-lungov-rodape.png`
+- A foto já tem o fundo magenta/rosa
+- Pode ser full-width ou em container com bordas suaves
+
+#### Copy
+> **Prazer, eu sou a Suelen Lungov.**
+
+> Especialista em moda feminina. Minha missão é mostrar que se vestir bem não é sobre ter mais roupas, mas sim sobre saber **o que realmente combina com você**.
+
+> Criei esse catálogo porque vi muitas mulheres frustradas com o armário cheio e a sensação de "não ter nada pra vestir". A solução não é comprar mais — é **saber combinar**.
+
+#### Social
+- Instagram: @suelenlungov
+- Badge de verificado (opcional, se ela tiver)
+
+#### Estilo
+- Fundo: Usar o gradient da própria foto ou replicar
+- Texto: Branco
+- Nome: h2, Playfair Display
+- Descrição: Body, Inter
+- Destaques em bold
+
+#### Animações
+- Foto: Fade-in da esquerda
+- Texto: Fade-in da direita
+- Ou: Parallax suave
+
+---
+
+### SEÇÃO 11: FAQ
+
+**Layout:** Accordion centralizado
+**Background:** #FFFFFF
+
+#### Header
+> **Perguntas Frequentes**
+
+#### Questions (Accordion)
+
+**Q1:** O catálogo funciona pra qualquer estilo de corpo?
+**A1:** Sim! Os looks são montados com peças básicas e versáteis que funcionam para diferentes biotipos.
+
+**Q2:** Preciso comprar as 14 peças?
+**A2:** Não necessariamente. A maioria das mulheres já tem peças parecidas no armário. O catálogo te mostra como usar o que você já tem.
+
+**Q3:** Como recebo o material?
+**A3:** Após a compra, você recebe o PDF + acesso ao app direto no seu WhatsApp, em poucos minutos.
+
+**Q4:** E se eu não gostar?
+**A4:** Você tem 7 dias para testar. Se não fizer sentido pra você, devolvemos 100% do seu dinheiro.
+
+**Q5:** O acesso é vitalício mesmo?
+**A5:** Sim! Você paga uma vez e acessa para sempre, incluindo atualizações futuras.
+
+#### Estilo do Accordion
+- Fechado: Pergunta + chevron-down
+- Aberto: Pergunta bold + resposta + chevron-up
+- Transição suave de altura (0.3s)
+- Border-bottom entre items
+- Hover: Background sutil
+
+#### Animações
+- Accordion items: Stagger fade-in
+- Open/close: Smooth height transition
+
+---
+
+### SEÇÃO 12: CTA FINAL
+
+**Layout:** Centralizado, impactante
+**Background:** #1A1A1A (dark) ou gradient rosa
+
+#### Copy
+
+> **Chega de abrir o armário e não saber o que vestir.**
+
+> 140 looks prontos. 14 peças. Confiança todos os dias.
+
+#### CTA Button
+> **Quero Meu Acesso Agora — R$ 57**
+
+#### Trust (abaixo do botão)
+> ✅ Acesso imediato • ✅ Garantia de 7 dias
+
+#### Estilo
+- Headline: h2, branco, Playfair Display
+- Subline: Body large, branco/cinza claro
+- Botão: Grande, destaque máximo (branco com texto rosa ou rosa vibrante)
+
+#### Animações
+- Seção: Fade-in no scroll
+- Botão: Pulse suave ou glow
+
+---
+
+### SEÇÃO 13: FOOTER
+
+**Layout:** Simples, minimalista
+**Background:** #1A1A1A ou #0A0A0A
+
+#### Conteúdo
+- Copyright: © Suelen Lungov — Todos os direitos reservados.
+- Links (opcional): Termos de Uso | Política de Privacidade
+
+#### Estilo
+- Texto: Cinza claro (#888)
+- Centralizado
+- Padding: py 2rem
+
+---
+
+## NOTAS IMPORTANTES DE IMPLEMENTAÇÃO
+
+### Mobile-First
+- A página deve ser projetada primeiro para mobile (375px)
+- Breakpoints: 640px (sm), 768px (md), 1024px (lg)
+- Todas as seções devem funcionar bem em coluna única
+
+### Performance
+- Lazy load para imagens abaixo do fold
+- Otimizar GIF do app (pode ser pesado)
+- Usar `loading="lazy"` em imagens
+
+### Animações
+- Usar Intersection Observer para animações no scroll
+- Preferir CSS animations sobre JS quando possível
+- Animações suaves (ease, ease-out) — nada abrupto
+
+### Acessibilidade
+- Contraste adequado (especialmente texto branco sobre rosa)
+- Botões com hover/focus states claros
+- Alt text em todas as imagens
+
+### Whitespace
+- Generoso espaçamento entre seções
+- Nunca parecer "apertado" ou poluído
+- Respiração visual é essencial para o tom sofisticado
+
+### Cores
+- Primary (#C41E7A) usado com moderação — CTAs, badges, destaques
+- A maioria do texto é dark sobre light
+- Seções escuras para criar contraste e ritmo visual
+
+---
+
+## RESUMO DE IMAGENS A USAR
+
+| Seção | Imagem | Tipo |
+|-------|--------|------|
+| Hero | 6 imagens flutuantes (bolsa, calça, camisa, cinto, colete, tênis) | PNG transparente |
+| Hero | Vídeo embed | YouTube/Vimeo |
+| Entregáveis | capa-catalogo.png | Mockup 3D |
+| Entregáveis | app.gif | GIF animado |
+| Entregáveis | capa-ebook-acessorios.png | Mockup 3D |
+| Depoimentos | Fotos das clientes (extrair dos prints) | Foto circular |
+| Sobre Mim | suelen-lungov-rodape.png | Foto com fundo |
+
+---
+
+## FIM DO PROMPT
+
+Copie este prompt completo para o Replit Agent ou Lovable para gerar a landing page.
