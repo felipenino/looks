@@ -382,7 +382,7 @@ function OfertaFinal() {
         
         <Button 
           className="mt-10 w-full h-16 rounded-xl bg-[#39C55E] hover:bg-[#2EB051] text-white font-black shadow-2xl transition-transform hover:scale-[1.02] uppercase tracking-tight text-[18px]"
-          onClick={() => window.open("https://go.hotmart.com/C99586077J", "_blank")}
+          onClick={() => window.open("https://pay.hotmart.com/C99586077J", "_blank")}
         >
           Acesso imediato e vitalício
         </Button>
@@ -598,7 +598,7 @@ function StickyMiniNav() {
           </div>
           <span className="text-sm font-black tracking-tighter uppercase">140 Looks</span>
         </div>
-        <Button size="sm" className="rounded-full bg-[#C2452D] text-white px-6 font-bold text-xs" onClick={() => window.open("https://go.hotmart.com/C99586077J", "_blank")}>Quero Agora</Button>
+        <Button size="sm" className="rounded-full bg-[#C2452D] text-white px-6 font-bold text-xs" onClick={() => window.open("https://pay.hotmart.com/C99586077J", "_blank")}>Quero Agora</Button>
       </div>
     </motion.div>
   );
