@@ -591,13 +591,7 @@ function StickyMiniNav() {
 
   return (
     <motion.div initial={{ y: -60 }} animate={{ y: 0 }} className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur-md shadow-sm h-14">
-      <div className="container-px mx-auto flex items-center justify-between h-full max-w-[1100px]">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded bg-[#C2452D] flex items-center justify-center text-white">
-            <Grid3X3 className="w-5 h-5" />
-          </div>
-          <span className="text-sm font-black tracking-tighter uppercase">140 Looks</span>
-        </div>
+      <div className="container-px mx-auto flex items-center justify-center h-full max-w-[1100px]">
         <Button size="sm" className="rounded-full bg-[#C2452D] text-white px-6 font-bold text-xs" onClick={() => window.open("https://go.hotmart.com/C99586077J", "_blank")}>Quero Agora</Button>
       </div>
     </motion.div>
