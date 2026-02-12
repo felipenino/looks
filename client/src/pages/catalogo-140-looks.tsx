@@ -381,6 +381,8 @@ function OfertaFinal() {
         <p className="text-black/30 text-[10px] mt-4 font-black uppercase tracking-widest">(mais barato que uma blusinha)</p>
         
         <Button 
+          id="btn-compra-principal"
+          data-track="cta-comprar"
           className="mt-10 w-full h-16 rounded-xl bg-[#39C55E] hover:bg-[#2EB051] text-white font-black shadow-2xl transition-transform hover:scale-[1.02] uppercase tracking-tight text-[18px]"
           onClick={() => window.open("https://pay.hotmart.com/C99586077J", "_blank")}
         >
@@ -592,7 +594,7 @@ function StickyMiniNav() {
   return (
     <motion.div initial={{ y: -60 }} animate={{ y: 0 }} className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur-md shadow-sm h-14">
       <div className="container-px mx-auto flex items-center justify-center h-full max-w-[1100px]">
-        <Button size="sm" className="rounded-full bg-[#C2452D] text-white px-6 font-bold text-xs" onClick={() => window.open("https://pay.hotmart.com/C99586077J", "_blank")}>Quero Agora</Button>
+        <Button id="btn-compra-sticky" data-track="cta-comprar" size="sm" className="rounded-full bg-[#C2452D] text-white px-6 font-bold text-xs" onClick={() => window.open("https://pay.hotmart.com/C99586077J", "_blank")}>Quero Agora</Button>
       </div>
     </motion.div>
   );
