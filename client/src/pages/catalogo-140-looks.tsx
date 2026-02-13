@@ -32,6 +32,31 @@ type FloatingItem = {
   duration: number;
 };
 
+function getHotmartURL() {
+  const hotmartBase = "https://pay.hotmart.com/C99586077J";
+  const params = new URLSearchParams(window.location.search);
+
+  const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+  const utms: string[] = [];
+
+  utmKeys.forEach((key) => {
+    const val = params.get(key);
+    if (val) utms.push(`${key}=${encodeURIComponent(val)}`);
+  });
+
+  // Monta o SCK para o Hotmart Analytics
+  const source = params.get("utm_source") || "direct";
+  const campaign = params.get("utm_campaign") || "sem-campanha";
+  const sck = `${source}|${campaign}`;
+  utms.push(`sck=${encodeURIComponent(sck)}`);
+
+  // Passa o fbclid se existir (importante para a Meta)
+  const fbclid = params.get("fbclid");
+  if (fbclid) utms.push(`fbclid=${encodeURIComponent(fbclid)}`);
+
+  return utms.length > 0 ? `${hotmartBase}?${utms.join("&")}` : hotmartBase;
+}
+
 function useScrollParallax(max = 18) {
   const [y, setY] = useState(0);
   useEffect(() => {
@@ -384,7 +409,7 @@ function OfertaFinal() {
           id="btn-compra-principal"
           data-track="cta-comprar"
           className="mt-10 w-full h-16 rounded-xl bg-[#39C55E] hover:bg-[#2EB051] text-white font-black shadow-2xl transition-transform hover:scale-[1.02] uppercase tracking-tight text-[18px]"
-          onClick={() => window.open("https://pay.hotmart.com/C99586077J", "_blank")}
+          onClick={() => window.open(getHotmartURL(), "_blank")}
         >
           Acesso imediato e vitalício
         </Button>
@@ -594,7 +619,7 @@ function StickyMiniNav() {
   return (
     <motion.div initial={{ y: -60 }} animate={{ y: 0 }} className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur-md shadow-sm h-14">
       <div className="container-px mx-auto flex items-center justify-center h-full max-w-[1100px]">
-        <Button id="btn-compra-sticky" data-track="cta-comprar" size="sm" className="rounded-full bg-[#C2452D] text-white px-6 font-bold text-xs" onClick={() => window.open("https://pay.hotmart.com/C99586077J", "_blank")}>Quero Agora</Button>
+        <Button id="btn-compra-sticky" data-track="cta-comprar" size="sm" className="rounded-full bg-[#C2452D] text-white px-6 font-bold text-xs" onClick={() => window.open(getHotmartURL(), "_blank")}>Quero Agora</Button>
       </div>
     </motion.div>
   );
