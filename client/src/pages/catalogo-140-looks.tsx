@@ -33,7 +33,7 @@ type FloatingItem = {
 };
 
 function getHotmartURL() {
-  const hotmartBase = "https://pay.hotmart.com/C99586077J";
+  const hotmartBase = "https://go.hotmart.com/C99586077J";
   const params = new URLSearchParams(window.location.search);
 
   const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
