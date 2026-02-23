@@ -33,7 +33,7 @@ type FloatingItem = {
 };
 
 function getHotmartURL() {
-  const hotmartBase = "https://go.hotmart.com/C99586077J";
+  const hotmartBase = "https://pay.hotmart.com/C99586077J";
   const params = new URLSearchParams(window.location.search);
 
   const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
@@ -48,7 +48,7 @@ function getHotmartURL() {
   const source = params.get("utm_source") || "direct";
   const campaign = params.get("utm_campaign") || "sem-campanha";
   const sck = `${source}|${campaign}`;
-  utms.push(`sck=${encodeURIComponent(sck)}`);
+  utms.push(`sck=${sck}`);
 
   // Passa o fbclid se existir (importante para a Meta)
   const fbclid = params.get("fbclid");
